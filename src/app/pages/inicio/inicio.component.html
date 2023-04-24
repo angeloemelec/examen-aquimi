@@ -1,1 +1,119 @@
-<h1>{{nombre}}</h1>
+<p-toast></p-toast>
+<div class="m-6">
+    <h1>{{nombre + ' ' + apellido}}</h1>
+    <app-loading [visible]="loadingVisible"></app-loading>
+    
+    <!-- <div class="grid">
+        <div class="col-6">
+            <p-button label="Ver loading" (onClick)="visualizarLoading()" ></p-button>
+        </div>
+        <div class="col-6">
+            <p-button label="Ir a tabla" icon="pi pi-save" iconPos="right" (onClick)="irPaginaTabla()"></p-button>
+        </div>
+    </div> -->
+    
+    <p-panel header="Formulario reactivo">
+        <!-- <div class="card flex justify-content-center gap-3">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>   
+                <input type="text" pInputText/>  
+            </span>
+            
+           
+            <span class="p-input-icon-right">  
+                <i class="pi pi-spin pi-spinner"></i>
+                <input type="text" pInputText/>
+            </span>   
+        </div> -->
+
+        
+            <!--
+            <form [formGroup]="formUsuario" class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="name">Nombre</label>
+                <input id="name" type="text" pInputText formControlName="nombre"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid  b
+                               order-round appearance-none outline-none focus:border-primary w-full"/>
+                
+                
+                <div *ngIf="(formUsuario.get('nombre')!.dirty || formUsuario.get('nombre')!.touched)"> 
+                    <small *ngIf="formUsuario.get('nombre')!.hasError('required')" id="name-help" class="p-error">
+                        Nombre requerido</small>
+                </div>
+
+                </div>
+    
+                <div class="field col-12 md:col-6">
+                    <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" pInputText formControlName="apellido"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid 
+                               border-round appearance-none outline-none focus:border-primary w-full"/>
+                
+                <div *ngIf="(formUsuario.get('apellido')!.dirty || formUsuario.get('apellido')!.touched)">
+                    <small *ngIf="formUsuario.get('apellido')!.hasError('required')" id="apellido-help" class="p-error">
+                        Apellido requerido</small>
+                </div>
+            </div>
+                <p-button (onClick)="verificar()"> verificar</p-button>
+            </form>
+            
+    {{formUsuario.value | json }}
+    {{formUsuario.get('nombre')!.hasError('required') }}
+    -->
+
+
+    <form [formGroup]="formEmpleado" class="formgrid grid">
+        <div class="field col-12 md:col-5">
+            <label for="name">Name</label>
+        <input id="name" type="text" pInputText formControlName="name"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid  b
+                       order-round appearance-none outline-none focus:border-primary w-full"/>
+        
+        
+        <div *ngIf="(formEmpleado.get('name')!.dirty || formEmpleado.get('name')!.touched)"> 
+            <small *ngIf="formEmpleado.get('name')!.hasError('required')" id="name-help" class="p-error">
+                Nombre requerido</small>
+        </div>
+
+        </div>
+
+        <div class="field col-12 md:col-5">
+            <label for="salary">Salary</label>
+        <input id="salary" type="text" pInputText formControlName="salary"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid 
+                       border-round appearance-none outline-none focus:border-primary w-full"/>
+        
+        <div *ngIf="(formEmpleado.get('salary')!.dirty || formEmpleado.get('salary')!.touched)">
+            <small *ngIf="formEmpleado.get('salary')!.hasError('required')" id="salary-help" class="p-error">
+                Salary requerido</small>
+        </div>
+    </div>
+
+    <div class="field col-12 md:col-2">
+        <label for="age">Age</label>
+    <input id="age" type="text" pInputText formControlName="age"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid 
+                   border-round appearance-none outline-none focus:border-primary w-full"/>
+    
+    <div *ngIf="(formEmpleado.get('age')!.dirty || formEmpleado.get('age')!.touched)">
+        <small *ngIf="formEmpleado.get('age')!.hasError('required')" id="age-help" class="p-error">
+            Age requerido</small>
+    </div>
+</div>
+
+        <p-button label="Guardar" (onClick)="verificarEmpleado()"> </p-button>
+    </form>
+
+    {{formEmpleado.value | json }}
+    {{formEmpleado.get('name')!.hasError('required') }}
+
+    </p-panel>
+</div>
+
+
+
+
+
+
+
+
